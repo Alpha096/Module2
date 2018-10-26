@@ -4,19 +4,28 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="mobileonedata")
 public class Mobile {
 	@Id
 	@Column(name="mob_id")
+	@NotNull(message="Mobile Id cannot be empty!")
 	Integer mobId;
+	
 	@Column(name="mob_name")
+	@NotEmpty(message="Name cannot be empty!")
 	String mobName;
+	
+	@NotNull(message="Price cannot be empty!")
 	@Column(name="mob_price")
 	Double price;
+	
 	@Column(name="mob_cato")
 	String mobCategory;
+	
 	@Column(name="mob_online")
 	String online;
 

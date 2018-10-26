@@ -13,17 +13,18 @@
 	<fo:form action="adddata" method="post" modelAttribute="my">	
 		<tr>
 			<td>Mobile ID</td>
-			<td><fo:input path="mobId"/>
+			<td><fo:input path="mobId"/><fo:errors path="mobId"></fo:errors>
 		</tr>
 		
 		<tr>
 		<td>Mobile Name</td>
-			<td><fo:input path="mobName"/>
+			<td><fo:input path="mobName"/><fo:errors path="mobName"></fo:errors>
 		 </tr>
 		 
 		 <tr>
 			<td>Mobile Price</td>
 			<td><fo:input path="price"/>
+			<fo:errors path="price"></fo:errors>
 		</tr>
 		
 		 <tr>

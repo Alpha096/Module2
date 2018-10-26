@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.enterprise.inject.Model;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,10 +35,18 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value="adddata", method=RequestMethod.POST)
-	public String addMobileData(@ModelAttribute("my") Mobile mobile){
-		mobileservice.addMobile(mobile);
-		//System.out.println("Mobile ID: "+mobile.getMobId()+" Mobile Name: "+mobile.getMobName()+" Mobile Price: "+mobile.getPrice() + " Category: "+mobile.getMobCategory()+" Online Availabilty: "+mobile.getOnline());
-		return "success";
+	public String addMobileData(@Valid@ModelAttribute("my") Mobile mobile, BindingResult result, Map<String, Object> model){
+		if(result.hasErrors()){
+			List<String> mylist=new ArrayList<>();
+			mylist.add("Android");
+			mylist.add("iOS");
+			mylist.add("Windows");
+			model.put("cato", mylist);
+			return "AddMobile";
+		}else{
+			mobileservice.addMobile(mobile);
+			return "success";
+		}
 	}
 	
 	@RequestMapping(value="showall", method=RequestMethod.GET)
