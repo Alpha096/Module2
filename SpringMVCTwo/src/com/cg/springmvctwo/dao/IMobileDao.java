@@ -9,5 +9,6 @@ public interface IMobileDao {
 	public List<Mobile> showAllMobile();
 	public void deleteMobile(int mobId);
 	public Mobile searchMobile(int mobId);
+	public void updateMobile(int mobId, double price);
 
 }

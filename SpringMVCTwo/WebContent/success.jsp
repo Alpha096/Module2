@@ -7,7 +7,7 @@
 <title>Success</title>
 </head>
 <body>
-Successfully Added!
+Success!
 
 </body>
 </html>

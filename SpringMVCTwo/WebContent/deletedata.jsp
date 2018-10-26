@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="b" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,10 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="home">Add Mobile</a><br>
-<a href="showall">Show All</a><br>
-<a href="search">Search Mobile</a><br>
-<a href="delete">Delete Mobile</a><br>
-<a href="update">Update Mobile</a><br>
+<b:form action="delete1" method="post" modelAttribute="id">
+Mobile Id : <b:input path="mobId"/><br>
+<input type="submit" value="Delete"/>
+</b:form>
 </body>
 </html>

@@ -24,19 +24,26 @@ public class IMobileServiceImpl implements IMobileService{
 	@Override
 	public List<Mobile> showAllMobile() {
 		// TODO Auto-generated method stub
-		return null;
+		return mobiledao.showAllMobile();
 	}
 
 	@Override
 	public void deleteMobile(int mobId) {
-		// TODO Auto-generated method stub
+		mobiledao.deleteMobile(mobId);
 		
 	}
 
 	@Override
 	public Mobile searchMobile(int mobId) {
 		// TODO Auto-generated method stub
-		return null;
+		return mobiledao.searchMobile(mobId);
+	}
+
+	@Override
+	public void updateMobile(int mobId, double price) {
+		// TODO Auto-generated method stub
+		mobiledao.updateMobile(mobId, price);
+		
 	}
 
 }
