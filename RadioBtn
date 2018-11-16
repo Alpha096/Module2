@@ -1,0 +1,9 @@
+public void setPfmStatus(String mstatus) {
+		String value;
+		List l = driver.findElements(By.name("memberStatus"));
+		for(int i=0;i<l.size();i++){
+		    value = ((WebElement) l.get(i)).getAttribute("value");
+		    if(value.equals(mstatus))
+		      ((WebElement) l.get(i)).click();
+		  }
+	}
